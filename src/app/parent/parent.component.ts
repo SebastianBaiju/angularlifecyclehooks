@@ -35,9 +35,16 @@ export class ParentComponent implements OnInit  {
   counterContent(){
       this.contentCounter.value ++;
   }
+
   destroy(){
     this.child = false;
   }
+
+  openChild(){
+    this.child = true;
+    this.childStatus =  "available";
+  }
+
 
   childDestroy(event:string){
     this.childStatus = event;
