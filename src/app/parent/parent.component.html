@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        <h2> parent {{onInit}} </h2>
+        <div class="col-12">
+            <button class="btn btn-primary p-2 m-2" (click)="counter()">counter</button>
+            <button class="btn btn-primary p-2 m-2" (click)="Reference()">Reference()</button>
+            <button class="btn btn-secondary p-2 m-2" (click)="counterContent()"> Content Counter</button>
+            <button class="btn btn-secondary p-2 m-2" (click)="destroy()"> destroy child</button>
+            <p>value from parent : {{contentValue}}</p>
+            <p>Child status : {{childStatus}}</p>
+        </div>
+        <div class="col-12">
+            <app-chlid [dataFromParent]="dataFromParent" [parentReference]="References" *ngIf="child" (childDestroy)="childDestroy($event)">
+                <app-content [content]="contentValue" [contentCounter]="contentCounter">
+
+                </app-content>
+            </app-chlid>
+        </div>
+    </div>
+</div>

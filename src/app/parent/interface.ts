@@ -1,0 +1,4 @@
+
+interface IReferance {
+  name:string;
+};

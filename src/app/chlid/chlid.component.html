@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h5 class="card-title"> Data from parent</h5>
+                <h5 class="card-title"> onchange </h5>
+                <p class="card-text"> {{parentData | json}}</p>
+                <p class="card-text"> {{parentReferenceInChange | json}}</p>
+                <p class="card-text"> {{dataFromParent}}</p>
+                <h5 class="card-title"> onInit </h5>
+                <p class="card-text"> {{onInit}}</p>
+                <h5 class="card-title"> DoCheck </h5>
+                <p class="card-text"> {{parentReferenceInDoCheck | json}}</p>
+                <h5 class="card-title"> Content </h5>
+                <ng-content #conetentData>
+
+                </ng-content>
+                <h5 class="card-title">ngAfterContentInit</h5>
+                <p class="card-text"> {{this.contentInit| json}}</p>
+                <h5 class="card-title">ngAfterContentChecked</h5>
+                <p class="card-text"> {{this.contentChecked| json}}</p>
+                <h5 class="card-title">ngAfterViewInit</h5>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"> Not Focused</label>
+                    <input #input1 type="email" class="form-control">
+                    <label for="exampleInputEmail1">Focused</label>
+                    <input #input type="email" class="form-control">
+                </div>
+            </div>
+            <div class="col-6">
+                <h5 class="card-title">ngAfterViewChecked</h5>
+                <button class="btn btn-primary p-2 m-2" (click)="counter()">counter</button>
+                <div class="form-group">
+                    <ng-container *ngFor='let in of count() ;let i = index'>
+                        <label for="exampleInputEmail1">{{i}}</label>
+                        <input #input2 type="email" class="form-control">
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
