@@ -1,4 +1,4 @@
-# AngularHooks
+# Angular Lifecycle hooks
 
 - angular lifecycle hooks examples with demo
 - just clone it and run npm i 
